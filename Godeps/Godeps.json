@@ -1,0 +1,5 @@
+{
+	"ImportPath": "test-harness",
+	"GoVersion": "go1.3rc2",
+	"Deps": []
+}
