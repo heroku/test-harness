@@ -13,6 +13,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	sleepTime := r.Form["after"][0]
 
+requestHeader := r.Header
+fmt.Printf("%s", requestHeader)
+
 	fmt.Printf("Sleeping for %s\n", sleepTime)
 	sleepDuration, _ := strconv.Atoi(sleepTime)
 	for i := 0; i < sleepDuration; i++ {
