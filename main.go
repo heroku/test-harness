@@ -13,6 +13,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	sleepTime := r.Form["after"][0]
 
+if reqId := r.Header.Get("X-Request-Id"); reqId != "" {
+	fmt.Printf("X-Request-Id: %s\n", reqId)
+}
+
 	fmt.Printf("Sleeping for %s\n", sleepTime)
 	sleepDuration, _ := strconv.Atoi(sleepTime)
 	for i := 0; i < sleepDuration; i++ {
